@@ -1,0 +1,11 @@
+apr: can not personalize macos error when trying to build bootable USB flash on MACOS catalina using macOS Catalina Patcher.
+
+Step 1: Use "Create an ISO image" using the patcher
+  This should create a .cdr file
+Step 2: change directory to where .cdr file is (using cd <directory path>) and Convert .cdr file to ISO using the following command :
+  hdiutil makehybrid -iso -joliet -o <File Name>.iso <File name>.iso.cdr
+Step 3: Convert .iso to .img
+  convert -format UDRW -o <file name>.img <file name>.iso 
+  This command will add a default .dmz extension to the file, simply just mv the file from <file>.iso.dmz to <file>.iso
+Step 4: Find your USB disk
+  diskutil list
