@@ -14,5 +14,8 @@ Step 5: Write the img file to USB
   sudo dd if=<IMG file location> of=/dev/rdiskN bs=1m (N from above)
 Note: dd command is notorious in not showing the status or progresss one way is to use kill -INFO $PID 
 (where $PID is the pid of dd command)
+Step 6: Once completed run
+  diskutil eject /dev/diskN
 
 
+Now you should have the USB you want to boot your device off of.
