@@ -9,3 +9,8 @@ Step 3: Convert .iso to .img
   This command will add a default .dmz extension to the file, simply just mv the file from <file>.iso.dmz to <file>.iso
 Step 4: Find your USB disk
   diskutil list
+  diskutil unmountDisk /dev/diskN (replace N with the disk number from the last command)
+Step 5: Write the img file to USB
+  sudo dd if=<IMG file location> of=/dev/rdiskN bs=1m (N from above)
+Note: dd command is notorious in not showing the status or progresss one way is to use kill -INFO $PID 
+(where $PID is the pid of dd command)
